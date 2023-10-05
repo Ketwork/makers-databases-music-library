@@ -64,3 +64,13 @@ def test_delete_record(db_connection):
         Artist(2, "ABBA", "Pop"),
         Artist(4, "Nina Simone", "Jazz"),
     ]
+
+"""
+When we call #find on the ArtistRepository wit an id
+I get the artist corresponfing to that id back
+"""
+def test_find(db_connection):
+    db_connection.seed("seeds/music_library.sql")
+    repository = ArtistRepository(db_connection)
+    result = repository.find(3)
+    assert result == Artist(3, "Taylor Swift", "Pop")
