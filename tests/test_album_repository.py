@@ -25,3 +25,13 @@ def test_get_all_albums(db_connection):
         Album(11, 'Fodder on My Wings', 1982, 4),
         Album(12, 'Ring Ring', 1973, 2)
     ]
+
+"""
+When we call #find on the AlbumRepository with an id
+I get the album corresponding to that id back
+"""
+def test_find_on_album(db_connection):
+    db_connection.seed("seeds/music_library.sql")
+    repository = AlbumRepository(db_connection)
+    result = repository.find(5)
+    assert result == Album(5, 'Bossanova', 1990, 1)

@@ -66,7 +66,7 @@ def test_delete_record(db_connection):
     ]
 
 """
-When we call #find on the ArtistRepository wit an id
+When we call #find on the ArtistRepository with an id
 I get the artist corresponfing to that id back
 """
 def test_find(db_connection):

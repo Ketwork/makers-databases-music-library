@@ -21,7 +21,10 @@ for artist in artists:
 # Find function prints corresponding artist
 print(artist_repository.find(1))
 
+# Albums
 album_repository = AlbumRepository(connection)
-
+# all albums
 for album in album_repository.all():
     print(album)
+# find album
+print(album_repository.find(1))
